@@ -2,9 +2,6 @@ let a = 0;
 let o = null;
 let b = null;
 let result = document.querySelector("#result");
-result.onclick(() => {
-    result.innerHTML = "hllo"
-})
 function appendNumber(number) {
     if (typeof o == 'string') {
         b = b * 10 + number;
