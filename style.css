@@ -70,7 +70,7 @@ body {
     z-index: -2;
 
 }
-/* .cir{
+.cir{
     border-radius: 100px;
     background-color: red;
     position: absolute;
@@ -86,4 +86,4 @@ body {
     z-index: -1;
     left: 0;
     box-shadow: 0 0  200px 40px  #0084ff52;
-} */
+}
