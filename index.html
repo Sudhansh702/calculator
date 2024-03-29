@@ -11,41 +11,28 @@
 
 <body>
     <div class="background">
-        <div id="result">0</div>
-        <div class="calulator">
-
-            <div class="num">
-                <div class="row1">
-                    <button onclick="reset()">AC</button>
-                    <button>B</button>
-                    <button onclick="cal('/')" style="background-color: #045baf;font-size: larger;">/</button>
-                </div>
-                <div class="row2">
-                    <button onclick="cal(7)" id="seven">7</button>
-                    <button onclick="cal(8)" id="eight">8</button>
-                    <button onclick="cal(9)" id="nine">9</button>
-                </div>
-                <div class="row3">
-                    <button onclick="cal(4)" id="four">4</button>
-                    <button onclick="cal(5)" id="five">5</button>
-                    <button onclick="cal(6)" id="six">6</button>
-                </div>
-                <div class="row4">
-                    <button onclick="cal(1)" id="one">1</button>
-                    <button onclick="cal(2)" id="two">2</button>
-                    <button onclick="cal(3)" id="three">3</button>
-                </div>
-                <div class="row5">
-                    <button onclick="cal(0)" style="width: 90px;">0</button>
-                    <button onclick="cal('.')">.</button>
-                </div>
-            </div>
-            <div class="sidebar">
-                <button onclick="cal('*')">*</button>
-                <button onclick="cal('-')">-</button>
-                <button onclick="cal('+')"style="height: 65px;" >+</button>
-                <button onclick="cal('=')"style="height: 65px;" >=</button>
-            </div>
+        <div class="cir"></div>
+        <div class="line"></div>
+        <div class="calculator">
+            <div id="result">0</div>
+            <button id="AC" class="cut"  onclick="reset()">AC</button>
+            <button id="bS" class="cut" onclick="backspace()">B</button>
+            <button id="opdivide" class="Operator" onclick="appendOperator('/')">/</button>
+            <button id="opstar" class="Operator" onclick="appendOperator('*')">*</button>
+            <button id="num7" class="number" onclick="appendNumber(7)">7</button>
+            <button id="num8" class="number" onclick="appendNumber(8)">8</button>
+            <button id="num9" class="number" onclick="appendNumber(9)">9</button>
+            <button id="opminus" class="Operator" onclick="appendOperator('-')">-</button>
+            <button id="num4" class="number" onclick="appendNumber(4)">4</button>
+            <button id="num5" class="number" onclick="appendNumber(5)">5</button>
+            <button id="num6" class="number" onclick="appendNumber(6)">6</button>
+            <button id="opplus" class="Operator" onclick="appendOperator('+')">+</button>
+            <button id="num1" class="number" onclick="appendNumber(1)">1</button>
+            <button id="num2" class="number" onclick="appendNumber(2)">2</button>
+            <button id="num3" class="number" onclick="appendNumber(3)">3</button>
+            <button id="opequal"  class="Operator" onclick="calculateResult()">=</button>
+            <button id="num0" class="number" onclick="appendNumber(0)">0</button>
+            <button id="numdot" class="number" onclick="appendNumber('.')">.</button>
         </div>
     </div>
     <script src="script.js"></script>

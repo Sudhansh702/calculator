@@ -1,44 +1,89 @@
-*{
-    color: #81cfff;
-    font-weight: bolder;
-}
-.background{
-    background-color: #17181a;
-    width: 200px;
-    height: 400px;
-    display: flex; 
-    flex-direction: column;
-    justify-content: end;  
-    align-items: end; 
-}
-.calulator{
-    display: flex; 
-}
-#result{
-    margin: 10px;
+* {
+    padding: 0;
+    margin: 0;
     color: white;
 }
-.num{
-    display: flex;
-    flex-direction:column;
-    gap: 5px;
-}
 
-button{
-    height: 40px;
-    width: 40px;
+body {
+    font-family: Arial, sans-serif;
+}
+.cut{
+    background-color:#616261;
+    color: #919294;
+    font-size:  3em;
+}
+.number{
     background-color:#312d36;
-    border:none;
-    border-radius: 10px;
-    margin: 2px;
+    color: #20a0e5;
+    font-size:  3em;
 }
-.sidebar{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+.Operator{
+    font-size:  3em;
+    color: #a9d6ff;
+    background-color: #005eb5;
 }
-.sidebar>button{
-    color: #80bffb;
-    background-color: #045baf;
-    font-size: larger;
+@media only screen and (max-width: 768px) {
+    .background {
+        background-color: black;
+    }
+    
+    
+    .calculator {
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 3fr 1fr 1fr 1fr 1fr 1fr;
+        align-items: end;
+    } 
+    
+    #result {
+        text-align: end;
+        padding: 10px;
+    }
+    button {
+        margin: auto;
+        height: 70px;
+        width: 70px;
+        border-radius: 10px;
+        border: none;
+    }
+    #result{
+        grid-column: 1/5;
+        grid-row: 1/3;
+        font-size: 48px;
+        
+    }
+    #num0 {
+        grid-column: 1/3;
+        width: 80%;
+    }
+    #opequal{
+        grid-column: 4/5;
+        grid-row: 6/8; 
+        height: 140px;
+        background-color: #1892ff;
+    }
 }
+.background{
+    position: relative;
+    z-index: -2;
+
+}
+/* .cir{
+    border-radius: 100px;
+    background-color: red;
+    position: absolute;
+    z-index: -1;
+    left: 70%;
+    top: 15%;
+    box-shadow: 0 0  200px 80px  #0084ff52;
+}
+.line{
+    height: 100%;
+    background-color: red;
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    box-shadow: 0 0  200px 40px  #0084ff52;
+} */
