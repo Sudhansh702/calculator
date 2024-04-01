@@ -74,3 +74,9 @@ function backspace() {
         result.innerHTML = a;
     }
 }
+
+console.log("script is connected")
+
+document.getElementById("num6").addEventListener("click",()=>{
+    console.log("hii");
+})
