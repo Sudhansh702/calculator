@@ -2,10 +2,8 @@ let a = 0;
 let o = null;
 let b = null;
 let result = document.querySelector("#result");
-result.onclick(() => {
-    result.innerHTML = "hllo"
-})
 function appendNumber(number) {
+    console.log("hii button is clicked")
     if (typeof o == 'string') {
         b = b * 10 + number;
         result.innerHTML = a + o + b;
@@ -14,6 +12,11 @@ function appendNumber(number) {
         result.innerHTML = a;
     }
 }
+document.querySelector("button").addEventListener("click",()=>{
+    console.log("button")
+})
+console.log("button")
+
 
 function appendOperator(op) {
     if (typeof o == 'string') {
