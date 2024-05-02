@@ -1,92 +1,52 @@
-function useOp(x, o, y) {
-    let a = x - 0
-    let b = y - 0
-    switch (o) {
-        case '+':
-            return a + b
-        case '-':
-            return a - b
-        case '*':
-            return a * b
-        case '/':
-            return a / b
-        default:
-            break;
-    }
-}
-function calcEquation(arr) {
-    for (let i = 0; i < arr.length; i++) {
-        if ((arr[i] == '+') || (arr[i] == '-') || (arr[i] == '*') || (arr[i] == '/')) {
-
-            let n = i - 1;
-            while (n >= 0 && arr[n] == -1) {
-                n--;
-            }
-            let y = arr[n]
-            arr[n] = -1
-            while (n >= 0 && arr[n] == -1) {
-                n--;
-            }
-            let x = arr[n]
-            arr[n] = -1
-            arr[i] = useOp(x, arr[i], y)
-        }
-    }
-    return arr[arr.length - 1]
-} 
-// 08:20 
-
-
-
-function precedence(ch) {
-    switch (ch) {
-      case '+':
-      case '-':
-        return 1;
-      case '*':
-      case '/':
-        return 2;
-      case '^':
-        return 3;
-    }
-    return -1;
-  }
-  
-  function infixToPostfix(exp) {
-    let result = "";
-    const stack = [];
-  
-    for (let i = 0; i < exp.length; i++) {
-      const c = exp.charAt(i);
-  
-      if (/[a-zA-Z0-9]/.test(c)) {
-        // Operand
-        result += c;
-      } else if (c === '(') {
-        stack.push(c);
-      } else if (c === ')') {
-        while (stack.length > 0 && stack[stack.length - 1] !== '(') {
-          result += stack.pop();
-        }
-        stack.pop(); // Remove the '('
+let result = document.getElementById("result")
+result.innerHTML = "0"
+let exp = ""
+function append(n) {
+  if (exp.length == 0 && /[0-9]/.test(n)) {
+    exp += n
+  } else {
+    if (/[0-9]/.test(n)) {
+      exp += n
+    } else {
+      let temp = exp.charAt(exp.length - 1)
+      if (/[0-9]/.test(temp)) {
+        exp += n
       } else {
-        while (stack.length > 0 && precedence(c) <= precedence(stack[stack.length - 1])) {
-          result += stack.pop();
-        }
-        stack.push(c);
+        exp = exp.slice(0, exp.length - 1)
+        exp += n
       }
     }
-  
-    while (stack.length > 0) {
-      result += stack.pop();
-    }
-  
-    return result;
   }
-  
-  // Example usage
-  const expression = "a+b*(c^d-e)";
-  const postfix = infixToPostfix(expression);
-  console.log("Infix:", expression);
-  console.log("Postfix:", postfix);
-  
+  result.innerText = exp
+}
+function backspace() {
+  if (exp.length <= 1) {
+    reset()
+    return
+  }
+  exp = exp.slice(0, -1);
+  result.innerText = exp;
+}
+function reset() {
+  result.innerText = "0"
+  exp = ""
+}
+const buttons = document.querySelectorAll('.button');
+
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    const value = button.innerText;
+
+    if (/\d/.test(value)) {
+      append(value);
+    } else if (value === 'C') {
+      reset();
+    } else if (value === '←') {
+      backspace();
+    } else if (value === '=') {
+      calculateResult();
+    } else {
+      append(value);
+    }
+  });
+});

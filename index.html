@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,31 +8,33 @@
     <link rel="stylesheet" href="style.css">
 
 </head>
+
 <body class="background">
     <div class="cir"></div>
-        <div class="line"></div>
+    <div class="line"></div>
     <div class="calculator">
-        <div id="result">0</div>
-        <button id="AC" class="cut"  onclick="reset()">AC</button>
-        <button id="bS" class="cut" onclick="backspace()">B</button>
-        <button id="opdivide" class="Operator" onclick="appendOperator('/')">/</button>
-        <button id="opstar" class="Operator" onclick="appendOperator('*')">*</button>
-        <button id="num7" class="number" onclick="appendNumber(7)">7</button>
-        <button id="num8" class="number" onclick="appendNumber(8)">8</button>
-        <button id="num9" class="number" onclick="appendNumber(9)">9</button>
-        <button id="opminus" class="Operator" onclick="appendOperator('-')">-</button>
-        <button id="num4" class="number" onclick="appendNumber(4)">4</button>
-        <button id="num5" class="number" onclick="appendNumber(5)">5</button>
-        <button id="num6" class="number" onclick="appendNumber(6)">6</button>
-        <button id="opplus" class="Operator" onclick="appendOperator('+')">+</button>
-        <button id="num1" class="number" onclick="appendNumber(1)">1</button>
-        <button id="num2" class="number" onclick="appendNumber(2)">2</button>
-        <button id="num3" class="number" onclick="appendNumber(3)">3</button>
-        <button id="opequal"  class="Operator" onclick="calculateResult()">=</button>
-        <button id="num0" class="number" onclick="appendNumber(0)">0</button>
-        <button id="numdot" class="number" onclick="appendNumber('.')">.</button>
+        <div id="result"></div>
+        <button id="AC" class="button cut">C</button>
+        <button id="bS" class="button cut">←</button>
+        <button id="opdivide" class="button Operator">/</button>
+        <button id="opstar" class="button Operator">*</button>
+        <button id="num7" class="button number">7</button>
+        <button id="num8" class="button number">8</button>
+        <button id="num9" class="button number">9</button>
+        <button id="opminus" class="button Operator">-</button>
+        <button id="num4" class="button number">4</button>
+        <button id="num5" class="button number">5</button>
+        <button id="num6" class="button number">6</button>
+        <button id="opplus" class="button Operator">+</button>
+        <button id="num1" class="button number">1</button>
+        <button id="num2" class="button number">2</button>
+        <button id="num3" class="button number">3</button>
+        <button id="opequal" class="button Operator" onclick="calculateResult()">=</button>
+        <button id="num0" class="button number">0</button>
+        <button id="numdot" class="button number">.</button>
     </div>
 
     <script src="front.js"></script>
 </body>
+
 </html>
